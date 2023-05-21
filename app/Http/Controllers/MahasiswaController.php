@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Http\Requests\StoreMahasiswaRequests;
 use Illuminate\Http\Request;
 use App\Http\Resources\MahasiswaResource;
@@ -15,7 +16,7 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        //
+        return MahasiswaResource::collection(Mahasiswa::orderBy('Nim', 'asc')->paginate(5));
     }
 
     /**
@@ -47,8 +48,8 @@ class MahasiswaController extends Controller
      */
     public function show(Mahasiswa $mahasiswas)
     {
-        //
         return new MahasiswaResource($mahasiswas);
+
     }
 
     /**

@@ -22,6 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/hello',function(){
     return "hello word";
+
 });
 
-Route::apiResource('mahasiswas', MahasiswaController::class);
+Route::apiResource('/mahasiswa', MahasiswaController::class);
