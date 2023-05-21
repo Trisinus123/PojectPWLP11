@@ -16,6 +16,7 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
+        //return MahasiswaResource::collection(Mahasiswa::all());
         return MahasiswaResource::collection(Mahasiswa::orderBy('Nim', 'asc')->paginate(5));
     }
 
@@ -35,9 +36,11 @@ class MahasiswaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreMahasiswaRequests $request)
     {
         //
+        return response()->json('hello');
+
     }
 
     /**
@@ -49,6 +52,7 @@ class MahasiswaController extends Controller
     public function show(Mahasiswa $mahasiswas)
     {
         return new MahasiswaResource($mahasiswas);
+
 
     }
 
