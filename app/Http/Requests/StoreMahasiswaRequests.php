@@ -27,7 +27,6 @@ class StoreMahasiswaRequests extends FormRequest
             //
             'Nim' => 'required|min:10',
             'Nama'=> 'required',
-            'kelas' => 'required',
             'Jurusan' => 'required',
             'No_Handphone' => 'required|min:12',
             'Tanggal_Lahir' => 'required',
@@ -36,3 +35,4 @@ class StoreMahasiswaRequests extends FormRequest
         ];
     }
 }
+

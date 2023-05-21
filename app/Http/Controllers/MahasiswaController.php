@@ -39,7 +39,18 @@ class MahasiswaController extends Controller
     public function store(StoreMahasiswaRequests $request)
     {
         //
-        return response()->json('hello');
+        // return response()->json('hello');
+        return new MahasiswaResource(Mahasiswa::create(
+            [
+                'Nim' => $request->Nim,
+                'Nama' => $request->Nama,
+                'Jurusan' => $request->Jurusan,
+                'No_Handphone' => $request->No_Handphone,
+                'Email' => $request->Email,
+                'Tanggal_Lahir' => $request->Tanggal_Lahir,
+                'kelas_id' => $request->kelas_id,
+            ]
+        ));
 
     }
 
@@ -52,7 +63,6 @@ class MahasiswaController extends Controller
     public function show(Mahasiswa $mahasiswas)
     {
         return new MahasiswaResource($mahasiswas);
-
 
     }
 
